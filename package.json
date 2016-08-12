@@ -16,9 +16,11 @@
     "method-override": "~1.0.0",
     "moment": "^2.13.0",
     "moment-timezone": "^0.5.4",
-    "mongoose": "~3.8.8",
+    "mongodb": "^2.2.5",
+    "mongoose": "~4.4",
     "morgan": "~1.0.0",
     "q": "^1.4.1",
+    "ruby": "^0.6.1",
     "serve-favicon": "~2.0.1"
   },
   "devDependencies": {
@@ -42,7 +44,6 @@
     "grunt-svgmin": "~0.4.0",
     "grunt-usemin": "~2.1.1",
     "grunt-env": "~0.4.1",
-    "grunt-node-inspector": "~0.1.5",
     "grunt-nodemon": "~0.2.0",
     "grunt-angular-templates": "^0.5.4",
     "grunt-dom-munger": "^3.4.0",

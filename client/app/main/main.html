@@ -2,6 +2,7 @@
 
 <header class="hero-unit" id="banner">
   <div class="container">
+      <!-- <div ng-include="'components/datepicker/datepicker.html'"></div> -->
       <h1>{{currentTime}}</h1>
   </div>
 </header>
@@ -9,7 +10,7 @@
   <div class="row">
     <div class="col-lg-6 col-lg-offset-3 text-center">
         <div ng-repeat="m in meds">
-            {{m.time}} {{m.name}} {{m.dosage}}
+            {{m.time | date: "MM/dd/yyyy 'at' h:mma"}} | {{m.name}} | {{m.dosage}}
         </div>
     </div>
   </div>
