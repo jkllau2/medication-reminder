@@ -35,8 +35,8 @@ Solution
 ========
 The medications are ordered by time (past to future). Custom filters are added to indicate the status of the medication based on the time past and will update in real time.
 
-Red - missed medication (cross icon)
-Green - current medication (checkmark icon)
-Blue - upcoming medication (flag icon)
+* Red - missed medication (cross icon)
+* Green - current medication (checkmark icon)
+* Blue - upcoming medication (flag icon)
 
 The current medication is clickable to be marked as completed (this satisfy the requirement of button enabled to be marked). 
