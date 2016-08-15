@@ -2,17 +2,37 @@
 
 <header class="hero-unit" id="banner">
   <div class="container">
-      <!-- <div ng-include="'components/datepicker/datepicker.html'"></div> -->
       <h1>{{currentTime}}</h1>
   </div>
 </header>
 <div class="container">
   <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 text-center">
-        <div ng-repeat="m in meds">
-            {{m.time | date: "MM/dd/yyyy 'at' h:mma"}} | {{m.name}} | {{m.dosage}}
-        </div>
+  <div>
+    <h2>Active Medication</h2>
+    <div ng-repeat="m in meds | orderBy:'time' " >
+        <div class="col-md-4 medication-card" ng-class="{ 'card-current' : ((m.time | amDifference : null : 'seconds') < 5000) && ((m.time | amDifference : null : 'seconds') > 0), 'card-upcoming' : (m.time | amDifference : null : 'seconds') > 5000, 'card-missed' : (m.time | amDifference : null : 'seconds') < 0}">
+          <div ng-show="{{((m.time | amDifference : null : 'seconds') < 5000) && ((m.time | amDifference : null : 'seconds') > 0) }}" class="pull-left">
+            <span class="glyphicon glyphicon-ok glyphicon-med color-success"></span>
+          </div>
+          <div ng-show="{{(m.time | amDifference : null : 'seconds') > 5000 }}" class="pull-left">
+            <span class="glyphicon glyphicon-flag glyphicon-med color-info"></span>
+          </div>
+          <div ng-show="{{(m.time | amDifference : null : 'seconds') < 0 }}" class="pull-left">
+            <span class="glyphicon glyphicon-remove glyphicon-med color-danger"></span>
+          </div>
+          <button ng-show="confirmMedication" class="btn-success btn-md" ng-click="confirmTime()"><span class="glyphicon glyphicon-ok"></span></button>
+          <div class="pull-right">
+            <h4>Date: {{ m.time | date:'medium'}}</h4>
+            <h4>Medication Name: {{ m.name }}</h4>
+            <h4>Dosage Amount: {{ m.dosage }}</h4>
+          </div>
+          <!-- {{(m.time | amDifference : null : 'seconds') }} -->
+        </div>         
+      </div>
     </div>
+  </div>
+  <div col-md-6>
+    <h2>Missed Medication</h2>
   </div>
 </div>
 <footer class="footer">

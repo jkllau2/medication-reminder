@@ -1,3 +1,4 @@
+html{ font-family: 'Raleway', sans-serif; }
 .thing-form {
     margin: 20px 0;
 }
@@ -27,4 +28,31 @@
     padding: 30px 0;
     margin-top: 70px;
     border-top: 1px solid #E5E5E5;
+}
+.glyphicon-med{
+    font-size: 50px;
+    margin-top: 16px;
+}
+.medication-card{
+    border: 1px solid #a9a9a9;
+    border-radius: 10px;
+    font-family: 'Raleway';
+    padding: 25px 30px;
+    margin: 0 25px 15px 0;
+    width: 330px;
+}
+.medication-card h4{ 
+    font-size: 14px; 
+}
+.card-current{ cursor: pointer; background: #dff0d8; }
+.card-current:hover{
+    background: #9BF078;
+}
+.card-upcoming{ background: #d9edf7; }
+.card-upcoming:hover{
+    background: #93D4F5;
+}
+.card-missed{ background: #f2dede; }
+.card-missed:hover{
+    background: #F29494;
 }

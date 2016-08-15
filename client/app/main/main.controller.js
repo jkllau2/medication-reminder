@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('medicationReminderApp').controller('MainCtrl', function ($scope, $http, $window) {
+angular.module('medicationReminderApp')
+	.controller('MainCtrl', function ($scope, $http, $window) {
 
     var start = moment().format('MM/DD/YYYY'),
         end = moment().add(1, 'day').format('MM/DD/YYYY');
@@ -14,4 +15,10 @@ angular.module('medicationReminderApp').controller('MainCtrl', function ($scope,
         $scope.$apply();
     }, 1000);
 
+    $scope.confirmMedication = false;
+    $scope.confirmTime = function(){
+    	$scope.confirmMedication = true;
+    	// if not confirm -> move to seperate area (apply a css class)
+    };
+    console.log($scope.diff);
 });
